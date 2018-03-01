@@ -1,0 +1,149 @@
+
+.wrapper
+{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: stretch;
+  align-content: stretch;
+
+}
+
+.main-nav ul
+{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: stretch;
+  align-content: stretch;
+}
+
+.main-nav a
+{
+  //display: block;
+}
+
+.hightlight
+{
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-contain: stretch;
+  align-content: stretch;
+  grid-template-areas:
+  "intro intro deal1"
+  "intro intro deal2"
+}
+
+.intro{
+  grid-area: intro;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.deal{
+
+}
+
+.deal1{
+  grid-area: deal1;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.deal2{
+  grid-area: deal2;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.services{
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: stretch;
+  align-content: stretch;
+  grid-template-areas:
+  "services-header services-header services-header services-header"
+  "pt cmp gf rl"
+
+}
+
+.services-header{
+  grid-area: services-header;
+  justify-self: stretch;
+  align-self: stretch;
+}
+.pt{
+  grid-area: pt;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.cmp{
+  grid-area: cmp;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.gf{
+  grid-area: gf;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.rl{
+  grid-area: rl;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+@media (max-width: 700px) {
+  .hightlight{
+    grid-template-areas:
+    "intro intro"
+    "deal1 deal2"
+  }
+  .services{
+    grid-template-areas:
+    "services-header services-header"
+    "pt cmp"
+    "gf rl"
+  }
+  .main-nav ul{
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .hightlight{
+    grid-template-areas:
+    "intro"
+    "deal1"
+    "deal2"
+  }
+
+  .services{
+    grid-template-areas:
+    "services-header"
+    "pt"
+    "cmp"
+    "gf"
+    "rl"
+  }
+}
