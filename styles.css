@@ -37,7 +37,6 @@ body{
 .main-nav ul
 {
   display: grid;
-  grid-template-rows: auto;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
@@ -45,7 +44,6 @@ body{
   align-items: stretch;
   justify-content: stretch;
   align-content: stretch;
-
   list-style: none;
 }
 
@@ -164,7 +162,8 @@ img{
   align-self: stretch;
 }
 
-.about-us-header{
+
+.section-header{
   text-align: center;
 }
 
@@ -186,9 +185,7 @@ img{
   justify-content: stretch;
   align-content: stretch;
 }
-.services-header{
-  text-align: center;
-}
+
 .services h3{
   text-align: center;
   padding: 10px;
@@ -237,7 +234,28 @@ img{
   grid-column: 4 / 5;
 }
 
-@media (max-width: 700px) {
+.contact-us fieldset{
+  box-shadow: var(--shadow);
+}
+
+.contact-us fieldset input, textarea{
+  box-shadow: var(--shadow);
+  background-color: var(--primary);
+}
+
+.submit-button{
+  background-color: var(--primary);
+  color: var(--secondary);
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.footer
+{
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
   .main-nav ul{
     grid-template-columns: 1fr;
   }
@@ -286,7 +304,7 @@ img{
   }
 }
 
-@media (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .main-nav ul{
     grid-template-columns: 1fr;
   }
