@@ -1,3 +1,24 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --background: #ccc;
+  --child-padding: 10px;
+}
+
+html
+{
+}
+
+body{
+  box-sizing: border-box;
+  margin: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background-color: var(--background);
+  line-height: 1.4;
+}
 
 .wrapper
 {
@@ -24,11 +45,38 @@
   align-items: stretch;
   justify-content: stretch;
   align-content: stretch;
+
+  list-style: none;
 }
 
-.main-nav a
+.main-nav ul a
 {
-  //display: block;
+  display: block;
+  box-shadow: var(--shadow);
+  background-color: var(--primary);
+  color: var(--dark);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+
+.main-nav ul a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.button{
+  background-color: var(--dark);
+  color: var(--light);
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+img{
+  max-width: 95%;
 }
 
 .hightlight
@@ -38,10 +86,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  justify-items: stretch;
-  align-items: stretch;
-  justify-contain: stretch;
-  align-content: stretch;
+  justify-items: center;
+  align-items:center;
+//  justify-contain: stretch;
+  //align-content: stretch;
   grid-template-areas:
   "intro intro deal1"
   "intro intro deal2"
@@ -51,10 +99,39 @@
   grid-area: intro;
   justify-self: stretch;
   align-self: stretch;
+  min-height: 400px;
+  background-image: url('images/intro.jpeg');
+  background-position: center;
+  background-size: cover;
+  box-shadow: var(--shadow);
 }
 
-.deal{
+.intro > *{
+  padding: var(--child-padding);
+}
 
+.intro h1
+{
+  font-size: 4rem;
+  color: var(--light);
+}
+
+.intro p
+{
+  font-size: 1.3rem;
+  color: var(--light);
+}
+.deal{
+  background-color: var(--primary);
+  box-shadow: var(--shadow);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.deal .price
+{
+  font-size: 2.5rem;
 }
 
 .deal1{
@@ -69,6 +146,18 @@
   align-self: stretch;
 }
 
+.about-us-header{
+  text-align: center;
+}
+
+.about-us{
+  box-shadow: var(--shadow);
+}
+
+.about-us > *
+{
+  padding: var(--child-padding);
+}
 .services{
   display: grid;
   grid-template-rows: auto auto;
@@ -80,16 +169,28 @@
   justify-content: stretch;
   align-content: stretch;
   grid-template-areas:
-  "services-header services-header services-header services-header"
   "pt cmp gf rl"
 
 }
-
 .services-header{
-  grid-area: services-header;
-  justify-self: stretch;
-  align-self: stretch;
+  text-align: center;
 }
+.services h3{
+  text-align: center;
+  padding: 10px;
+}
+
+.service{
+  display: grid;
+  box-shadow: var(--shadow);
+  align-items: center;
+  justify-items: center;
+}
+
+.service > *{
+  padding: var(--child-padding);
+}
+
 .pt{
   grid-area: pt;
   justify-self: stretch;
@@ -122,7 +223,6 @@
   }
   .services{
     grid-template-areas:
-    "services-header services-header"
     "pt cmp"
     "gf rl"
   }
@@ -140,7 +240,6 @@
 
   .services{
     grid-template-areas:
-    "services-header"
     "pt"
     "cmp"
     "gf"
